@@ -1,0 +1,85 @@
+<prog> ::= “int main() { <stat_list> return 0; }”
+
+
+
+<stat_list>  ::= <stat>
+             | <stat_list> <stat>
+
+
+
+<stat>       ::= <cmpd_stat>
+             | <if_stat>
+             | <iter_stat>
+             | <assgn_stat>
+
+             | <decl_stat>
+
+
+<cmpd_stat>  ::= { <stat_list> }
+
+
+
+<if_stat>    ::= if ( <exp> ) <stat>
+
+             | if ( <exp> ) <cmpd_stat>
+             | if ( <exp> ) <stat> else <stat>
+
+             | if ( <exp> ) <cmpd_stat> else <stat>
+
+             | if ( <exp> ) <stat> else <cmpd_stat>
+
+             | if ( <exp> ) <cmpd_stat> else <cmpd_stat>
+
+<iter_stat>  ::= while ( <exp> ) <stat>
+
+             | while ( <exp> ) <cmpd_stat>
+
+<assgn_stat> ::= <id> = <exp> ;
+
+
+
+<decl_stat>  ::= <type> <id> ;
+
+             | <type> <assgn_stat>
+
+<exp>        ::= <exp> <op> <exp>
+             | <id>
+             | <const>
+
+<op>         ::= + | - | * | /
+
+
+
+<type>   ::= int
+
+             | double
+
+
+
+<id>         ::= <char><chardigit_seq>
+
+
+
+<const>      ::= <digit><digit_seq>
+
+
+
+<char_digit_seq>   ::= [empty]
+
+                   | <char><char_digit_seq>
+
+                   | <digit><char_digit_seq>
+
+
+
+<digit_seq>  ::= [empty]
+
+             | <digit><digit_seq>
+
+
+
+<char>       ::= [A-Z] | [a-z] | _
+
+
+
+<digit>      ::= [0-9]
