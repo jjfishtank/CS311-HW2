@@ -1,4 +1,9 @@
-﻿#include "HW2.h"
+﻿/*
+ * Author: Jeremy Renati
+ * Date: 09/28/2023
+ * Writes code generated from Language object to "out/<executable dir>/random code.txt"
+ */
+#include "HW2.h"
 #include <fstream>
 
 int main() {

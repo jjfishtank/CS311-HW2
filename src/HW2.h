@@ -1,4 +1,9 @@
-﻿#pragma once
+﻿/*
+ * Author: Jeremy Renati 
+ * Date: 09/28/2023
+ * Language class for random code generation (only syntactically correct)
+ */
+#pragma once
 
 #include <string>
 #include <vector>
@@ -122,8 +127,8 @@ void Language::initializeMaps() {
     "if (<exp>)\n<cmpd_stat>", 
     "if (<exp>)\n<stat>else <stat>", 
     "if (<exp>)\n<cmpd_stat>else <stat>", 
-    "if (<exp>)\n<stat>else <cmpd_stat>", 
-    "if (<exp>)\n<cmpd_stat>else <cmpd_stat>" 
+    "if (<exp>)\n<stat>else\n<cmpd_stat>", 
+    "if (<exp>)\n<cmpd_stat>else\n<cmpd_stat>" 
   };
   weightMap["<if_stat>"] = { 0.25, 0.15, 0.2, 0.15, 0.15, 0.1 };
 
